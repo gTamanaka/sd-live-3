@@ -18,7 +18,7 @@ const Leituras = () => {
     firebase.app(); 
   }
 
-  const [reading, setReading] = useState("");
+  const [reading, setReading] = useState("Carregando");
 
   useEffect(() => {
     const db = firebase.firestore();
@@ -40,7 +40,9 @@ const Leituras = () => {
           );
         });
         setReading(cards);
-      });
+      }).catch(err=>{
+        setReading("Você não tem permissão para ver este conteúdo, faça login por favor!")
+      })
   }, []);
 
   return (
