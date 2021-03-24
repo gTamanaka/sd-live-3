@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Cadastrar from "./cadastrar/cadastrar";
+import Leituras from "./leituras/leituras";
 
 export default function App() {
   return (
@@ -31,7 +32,7 @@ export default function App() {
               <Cadastrar></Cadastrar>
             </Route>
             <Route path="/leituras">
-              <Users />
+              <Leituras></Leituras>
             </Route>
             <Route path="/">
               <Home />
@@ -47,6 +48,4 @@ function Home() {
   return <h2>Home</h2>;
 }
 
-function Users() {
-  return <h2>Users</h2>;
-}
+

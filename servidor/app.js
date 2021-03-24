@@ -9,10 +9,21 @@ let firebase = admin.initializeApp({
 
 const db = firebase.firestore();
 
-app.listen(3000, async () => {
+app.post("/cadastrar", async(req,res,next)=>{
+  try {
+    console.log("I Worked")
+    res.status(201).send( "User created")
+  } catch (error) {
+    
+  }
+})
+
+
+app.listen(3001, async () => {
   console.log("Web Server Up");
-  await db
+  let x = await db
     .collection("sensors")
     .doc("temperatura teste")
-    .set({ "dia": { 100: 12 } });
+    .set({ 20210320: { 102: 12 }, 20210321: {103:14} });
+    console.log(x)
 });
