@@ -11,7 +11,7 @@ console.log("Up Consumer");
 setInterval(async () => {
   try {
     let nivel = Math.random() * (max - min) + min;
-    await axios.post("http://localhost:3001/salvar-leituras", {
+    await axios.post("http://localhost:3002/salvar-leituras", {
       sensor: "temperatura 1",
       leitura: nivel,
       timestamp: new Date().getTime()
