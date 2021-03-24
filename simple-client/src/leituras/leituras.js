@@ -29,11 +29,13 @@ const Leituras = () => {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          let content = JSON.stringify(doc.data());
+          let content = JSON.stringify(doc.data(), null, 4);
           cards.push(
             <div>
               <h3>{doc.id}</h3>
-              <p>{content}</p>
+              <pre>
+              <code>{content}</code>
+              </pre>
             </div>
           );
         });
