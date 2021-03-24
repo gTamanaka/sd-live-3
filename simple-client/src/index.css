@@ -6,8 +6,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+:root{
+  --main-color: lightcoral;
+  --second-color: lightgreen;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+nav{
+  background-color: var(--main-color);
+  padding: 8px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+nav > ul{
+  display: flex;
+  width: 100%;
+  max-width: 450px;
+  justify-content: space-around;
+}
+
+nav > ul > li{
+  list-style-type: none;
+}
+nav > ul > li > a{
+  text-decoration: none;
+  color: white; 
+}
+nav > ul > li :hover{
+  color: red; 
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
