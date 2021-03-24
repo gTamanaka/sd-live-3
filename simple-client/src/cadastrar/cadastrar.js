@@ -1,14 +1,27 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Cadastrar = () => {
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (event) =>{
-    console.log(user, pwd, email)
-    event.preventDefault()
-  }
+  const handleSubmit = async (event) => {
+    try {
+      
+      console.log(user, pwd, email);
+      event.preventDefault();
+      let resp = await axios.post("http://localhost:3002/cadastrar", {
+        user: user,
+        pwd: pwd,
+        email: email,
+      });
+      alert(resp.data)
+    } catch (error) {
+      console.log(error.data)
+    alert(error.response.data)  
+    }
+  };
 
   return (
     <article>
@@ -45,7 +58,5 @@ const Cadastrar = () => {
     </article>
   );
 };
-
-
 
 export default Cadastrar;
