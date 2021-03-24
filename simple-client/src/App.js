@@ -2,24 +2,26 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Cadastrar from "./cadastrar/cadastrar";
 import Leituras from "./leituras/leituras";
+import Login from "./login/login";
 
 export default function App() {
   return (
     <Router>
       <div>
         <nav>
-          <div>
-            Faz de conta que é um logo
-          </div>
+          <div>Faz de conta que é um logo</div>
           <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/cadastrar">Cadastrar</Link>
+              <Link to="/leituras">Leituras</Link>
             </li>
             <li>
-              <Link to="/leituras">Leituras</Link>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/cadastrar">Cadastrar</Link>
             </li>
           </ul>
         </nav>
@@ -34,6 +36,9 @@ export default function App() {
             <Route path="/leituras">
               <Leituras></Leituras>
             </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
             <Route path="/">
               <Home />
             </Route>
@@ -47,5 +52,3 @@ export default function App() {
 function Home() {
   return <h2>Home</h2>;
 }
-
-
